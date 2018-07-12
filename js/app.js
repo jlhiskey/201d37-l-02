@@ -75,4 +75,55 @@ if (answerFive === 'Y' || answerFive === 'YES') {
 console.log('answerFive=No', answerFive);
 console.log('Total Possible Score = 5.', score);
 
+var totAttempts = 4;
+var correctNum = 27;
+
+while(totAttempts > 0) {
+  var answerSix = prompt('Guess my favorite number. Hint: Between 0 and 30');
+  console.log('What is my favorite number', correctNum);
+  if (parseInt(answerSix) === correctNum) {
+    alert('The force is strong with this one.');
+    score++;
+    break;
+  } else if (answerSix < correctNum) {
+    totAttempts--;
+    alert('Guess Higher. You have '+ totAttempts+' guesses left');
+  } else if (answerSix > correctNum) {
+    totAttempts--;
+    alert('Guess Lower. You have '+ totAttempts+' guesses left');
+  }
+}
+if (totAttempts === 0) {
+  alert('Im a Toydarian, your Jedi mind tricks wont work on me');
+}
+console.log('answerSix=27', correctNum);
+console.log('Total Possible Score = 6.', score);
+
+var totalAttempts = 6;
+var correctStates = ['COLORADO', 'CALIFORNIA', 'CO', 'CA'];
+var finish = false;
+
+for (var i = 0; i<totalAttempts; i++) {
+  var answerSeven = prompt('Guess what states I have lived in other than Washington. You can spell out the entire state name or use the abbreveation for the state. Hint: West of the Mississippi').toUpperCase();
+  console.log('What states have I lived in other than Washington', correctStates);
+  for(var j=0; j< correctStates.length; j++) {
+    if (correctStates[j] === answerSeven) {
+      alert('You must be a clairvoyant.');
+      score++;
+      finish = true;
+      break;
+    }
+  }
+
+  if (finish === false) {
+    alert('Try Again. You have '+ (totalAttempts-i)+' guesses left');
+  } else break;
+
+}
+if (totalAttempts === 0) {
+  alert('Sorry I was hoping you would have said Colorado or California');
+}
+console.log('answerSeven=California or Colorado (CA or CO', correctStates);
+console.log('Total Possible Score = 7.', score);
+
 alert('Congratulations your score is ' + score + ' out of 7.');
