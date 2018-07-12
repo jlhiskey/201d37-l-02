@@ -104,7 +104,7 @@ var correctStates = ['COLORADO', 'CALIFORNIA', 'CO', 'CA'];
 var finish = false;
 
 for (var i = 0; i<totalAttempts; i++) {
-  var answerSeven = prompt('Guess what states I have lived in other than Washington. You can spell out the entire state name or use the abbreveation for the state. Hint: West of the Mississippi').toUpperCase();
+  var answerSeven = prompt('Guess a state I have lived in other than Washington. You can spell out the entire state name or use the abbreveation for the state. Hint: West of the Mississippi').toUpperCase();
   console.log('What states have I lived in other than Washington', correctStates);
   for(var j=0; j< correctStates.length; j++) {
     if (correctStates[j] === answerSeven) {
@@ -114,11 +114,9 @@ for (var i = 0; i<totalAttempts; i++) {
       break;
     }
   }
-
   if (finish === false) {
     alert('Try Again. You have '+ (totalAttempts-i)+' guesses left');
   } else break;
-
 }
 if (totalAttempts === 0) {
   alert('Sorry I was hoping you would have said Colorado or California');
@@ -126,4 +124,6 @@ if (totalAttempts === 0) {
 console.log('answerSeven=California or Colorado (CA or CO', correctStates);
 console.log('Total Possible Score = 7.', score);
 
-alert('Congratulations your score is ' + score + ' out of 7.');
+if (score <= 4) {
+  alert('Please try harder your score is ' + score + ' out of 7.');
+} else alert('Congratulations your score is ' + score + ' out of 7.');
