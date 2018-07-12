@@ -1,3 +1,4 @@
+
 'use strict';
 
 alert('Hello!!! My name is Jason. You are about to guess who I am. Please answer all questions using Y or N or Yes or No');
@@ -8,21 +9,27 @@ console.log('Starting Score=0.', score);
 var answerOne = prompt('Was I born in WA?').toUpperCase();
 console.log('Was I born in WA?', answerOne);
 
-if (answerOne === 'Y' || answerOne === 'YES') {
-  alert('Wrong');
-} else if (answerOne ==='N' || answerOne === 'NO') {
-  alert('Correct');
-  score++;
-} else {
-  alert('Try inputing Y/N or YES/NO');
+function questionOne() {
+  var answerOne = prompt('Was I born in WA?').toUpperCase();
+  console.log('Was I born in WA?', answerOne);
+  if (answerOne === 'Y' || answerOne === 'YES') {
+    alert('Wrong');
+  } else if (answerOne ==='N' || answerOne === 'NO') {
+    alert('Correct');
+    score++;
+  } else {
+    alert('Try inputing Y/N or YES/NO');
+  }
+  console.log('answerOne=No', answerOne);
+  console.log('Total Possible Score = 1.', score); 
 }
-console.log('answerOne=No', answerOne);
-console.log('Total Possible Score = 1.', score);
+
+questionOne();
 
 var answerTwo = prompt('Am I over 30 years old?').toUpperCase();
 console.log('Am I over 30 years old?', answerTwo);
 
-if (answerTwo === 'Y' || answerTwo === 'YES') {
+function questionTwo(){if (answerTwo === 'Y' || answerTwo === 'YES') {
   alert('Correct');
   score++;
 } else if (answerTwo ==='N' || answerTwo === 'NO') {
@@ -31,12 +38,14 @@ if (answerTwo === 'Y' || answerTwo === 'YES') {
   alert('Try inputing Y/N or YES/NO');
 }
 console.log('answerTwo=Yes', answerTwo);
-console.log('Total Possible Score = 2.', score);
+console.log('Total Possible Score = 2.', score);}
+
+questionTwo();
 
 var answerThree = prompt('Do I own a Ford?').toUpperCase();
 console.log('Do I own a Ford?', answerThree);
 
-if (answerThree === 'Y' || answerThree === 'YES') {
+function questionThree(){if (answerThree === 'Y' || answerThree === 'YES') {
   alert('Definentaly incorrect');
 } else if (answerThree ==='N' || answerThree === 'NO') {
   alert('Chevy all the way!!!');
@@ -45,12 +54,14 @@ if (answerThree === 'Y' || answerThree === 'YES') {
   alert('Try inputing Y/N or YES/NO');
 }
 console.log('answerThree=No', answerThree);
-console.log('Total Possible Score = 3.', score);
+console.log('Total Possible Score = 3.', score);}
+
+questionThree();
 
 var answerFour = prompt('Do I own a banjo?').toUpperCase();
 console.log('Do I own a banjo?', answerFour);
 
-if (answerFour === 'Y' || answerFour === 'YES') {
+function questionFour(){if (answerFour === 'Y' || answerFour === 'YES') {
   alert('Correct');
   score++;
 } else if (answerFour ==='N' || answerFour === 'NO') {
@@ -59,12 +70,13 @@ if (answerFour === 'Y' || answerFour === 'YES') {
   alert('Try inputing Y/N or YES/NO');
 }
 console.log('answerFour=Yes', answerOne);
-console.log('Total Possible Score = 4.', score);
+console.log('Total Possible Score = 4.', score);}
+questionFour();
 
 var answerFive = prompt('Do I have any idea how to write code?').toUpperCase();
 console.log('Do I have any idea how to write code?', answerFive);
 
-if (answerFive === 'Y' || answerFive === 'YES') {
+function questionFive(){if (answerFive === 'Y' || answerFive === 'YES') {
   alert('Thanks for the compliment but I am completely lost.');
 } else if (answerFive ==='N' || answerFive === 'NO') {
   alert('Correct I am completely lost.');
@@ -73,12 +85,13 @@ if (answerFive === 'Y' || answerFive === 'YES') {
   alert('Try inputing Y/N or YES/NO');
 }
 console.log('answerFive=No', answerFive);
-console.log('Total Possible Score = 5.', score);
+console.log('Total Possible Score = 5.', score);}
+questionFive();
 
 var totAttempts = 4;
 var correctNum = 27;
 
-while(totAttempts > 0) {
+function questionSix(){while(totAttempts > 0) {
   var answerSix = prompt('Guess my favorite number. Hint: Between 0 and 30');
   console.log('What is my favorite number', correctNum);
   if (parseInt(answerSix) === correctNum) {
@@ -97,13 +110,14 @@ if (totAttempts === 0) {
   alert('Im a Toydarian, your Jedi mind tricks wont work on me');
 }
 console.log('answerSix=27', correctNum);
-console.log('Total Possible Score = 6.', score);
+console.log('Total Possible Score = 6.', score);}
+questionSix();
 
 var totalAttempts = 6;
 var correctStates = ['COLORADO', 'CALIFORNIA', 'CO', 'CA'];
 var finish = false;
 
-for (var i = 0; i<totalAttempts; i++) {
+function questionSeven (){for (var i = 0; i<totalAttempts; i++) {
   var answerSeven = prompt('Guess a state I have lived in other than Washington. You can spell out the entire state name or use the abbreveation for the state. Hint: West of the Mississippi').toUpperCase();
   console.log('What states have I lived in other than Washington', correctStates);
   for(var j=0; j< correctStates.length; j++) {
@@ -122,8 +136,12 @@ if (totalAttempts === 0) {
   alert('Sorry I was hoping you would have said Colorado or California');
 }
 console.log('answerSeven=California or Colorado (CA or CO', correctStates);
-console.log('Total Possible Score = 7.', score);
+console.log('Total Possible Score = 7.', score);}
 
-if (score <= 4) {
+questionSeven();
+
+function questionScore (){if (score <= 4) {
   alert('Please try harder your score is ' + score + ' out of 7.');
-} else alert('Congratulations your score is ' + score + ' out of 7.');
+} else alert('Congratulations your score is ' + score + ' out of 7.');}
+
+questionScore();
